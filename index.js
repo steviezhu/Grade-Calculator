@@ -21,4 +21,4 @@ showTimes = () => {
   return result;
 }
 
-<button></button>
+<button type="button"></button>
