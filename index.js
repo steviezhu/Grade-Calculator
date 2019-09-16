@@ -20,5 +20,8 @@ showTimes = () => {
   }
   return result;
 }
-
-<button type="button"></button>
+<html>
+  <body>
+    <button type="button"></button>
+  </body>
+</html>
