@@ -9,7 +9,8 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req,res) => res.send(cool()))
-  .get('/times',(req,res) => res.send(showTimes()))
+  .get('/times', (req,res) => res.send(showTimes()))
+  //.get('/calculator', (req,res) => res.render('calculator'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 showTimes = () => {
@@ -20,8 +21,3 @@ showTimes = () => {
   }
   return result;
 }
-<html>
-  <body>
-    <button type="button"></button>
-  </body>
-</html>

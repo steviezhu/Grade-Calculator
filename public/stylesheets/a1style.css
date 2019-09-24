@@ -1,0 +1,114 @@
+body[lang="en"] [lang="fr"],
+body[lang="fr"] [lang="en"]{
+    visibility: hidden;
+    display: none;
+}
+
+body{
+    background-color:maroon;
+    padding-left: 50px;
+    margin-top: -10px;
+}
+
+        .box{
+            background-color:white;
+            width:1230px;
+            height:930px;
+        }
+
+        .inner_box{
+            background-color:rgb(231, 244, 248);
+            margin-left: 30px;
+            width:900px;
+            height:750px;
+        }
+
+        .top_rect{
+            background-color:rgb(31, 30, 30);
+            width:1230px;
+            height:40px;
+        }
+
+        .bottom_rect{
+            margin-top: 20px;
+            background-color:rgb(31, 30, 30);
+            width:1230px;
+            height:30px;
+        }
+        h1{
+            padding-left: 30px;
+            font-weight: normal;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:30px;
+            display: inline;
+        }
+        h2{
+            margin-left:10px;
+            padding-top:20px;
+            color:maroon;
+            font-size:20px;
+        }
+        .grades_p{
+            padding-left:10px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .grade_table{
+            margin-left:10px;
+            width:97%;
+            border-collapse: collapse;
+        }
+        table,td,th{
+            border:1px solid gray;
+            text-align: left;
+        }
+        th{
+            padding-left:15px;
+            padding-top:5px;
+            padding-bottom:5px;
+            background-color:lightgray;
+        }
+        td{
+            padding-left:15px;
+            padding-top:10px;
+            padding-bottom: 10px;
+        }
+        .input_box{
+            width:90px;
+            height:30px;
+        }
+        .result_p{
+            margin-left:10px;
+            color:maroon;
+            font-size:20px;
+            font-weight: bold;
+        }
+
+        .weighted_button{
+            margin-left: 650px;
+            background-color: rgb(201, 32, 32);
+            color: white;
+            padding:10px;
+        }
+
+        .mean_button{
+            margin-left: 20px;
+            background-color: rgb(201,32,32);
+            color: white;
+            padding:10px;
+            padding-left:20px;
+            padding-right:20px;
+        }
+
+        .add_row_button{
+            margin-left: 677px;
+            background-color: rgb(201, 32, 32);
+            color: white;
+            padding:10px;
+        }
+
+        .lang_button{
+            margin-left: 300px;
+            background-color:rgb(201, 32, 32);
+            color:white;
+            padding:10px;
+        }

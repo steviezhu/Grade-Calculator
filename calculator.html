@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+     <link href="stylesheets/a1style.css" rel="stylesheet" type="text/css"></link>
+    </head>
+
+    <style>
+
+        body[lang="en"] [lang="fr"],
+        body[lang="fr"] [lang="en"]{
+            visibility: hidden;
+            display: none;
+        }
+
+        body{
+            background-color:maroon;
+            padding-left: 50px;
+            margin-top: -10px;
+        }
+
+        .box{
+            background-color:white;
+            width:1230px;
+            height:930px;
+        }
+
+        .inner_box{
+            background-color:rgb(231, 244, 248);
+            margin-left: 30px;
+            width:900px;
+            height:750px;
+        }
+
+        .top_rect{
+            background-color:rgb(31, 30, 30);
+            width:1230px;
+            height:40px;
+        }
+
+        .bottom_rect{
+            margin-top: 20px;
+            background-color:rgb(31, 30, 30);
+            width:1230px;
+            height:30px;
+        }
+        h1{
+            padding-left: 30px;
+            font-weight: normal;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:30px;
+            display: inline;
+        }
+        h2{
+            margin-left:10px;
+            padding-top:20px;
+            color:maroon;
+            font-size:20px;
+        }
+        .grades_p{
+            padding-left:10px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .grade_table{
+            margin-left:10px;
+            width:97%;
+            border-collapse: collapse;
+        }
+        table,td,th{
+            border:1px solid gray;
+            text-align: left;
+        }
+        th{
+            padding-left:15px;
+            padding-top:5px;
+            padding-bottom:5px;
+            background-color:lightgray;
+        }
+        td{
+            padding-left:15px;
+            padding-top:10px;
+            padding-bottom: 10px;
+        }
+        .input_box{
+            width:90px;
+            height:30px;
+        }
+        .result_p{
+            margin-left:10px;
+            color:maroon;
+            font-size:20px;
+            font-weight: bold;
+        }
+
+        .weighted_button{
+            margin-left: 650px;
+            background-color: rgb(201, 32, 32);
+            color: white;
+            padding:10px;
+        }
+
+        .mean_button{
+            margin-left: 20px;
+            background-color: rgb(201,32,32);
+            color: white;
+            padding:10px;
+            padding-left:20px;
+            padding-right:20px;
+        }
+
+        .add_row_button{
+            margin-left: 677px;
+            background-color: rgb(201, 32, 32);
+            color: white;
+            padding:10px;
+        }
+
+        .lang_button{
+            margin-left: 300px;
+            background-color:rgb(201, 32, 32);
+            color:white;
+            padding:10px;
+        }
+        
+
+    </style>
+
+    <title> Coursys - Formula Tester </title>
+
+    <body lang="en">
+        <script type="text/javascript">
+            function findPercentage1(){
+                var obtained = document.getElementById('inputObtained1').value;
+                var total = document.getElementById('inputTotal1').value;
+                var result = parseFloat(obtained) / parseFloat(total);
+                if(!isNaN(result)){
+                    document.getElementById('percentage1').value = result*100;
+                }
+            } 
+            function findPercentage2(){
+                var obtained = document.getElementById('inputObtained2').value;
+                var total = document.getElementById('inputTotal2').value;
+                var result = parseFloat(obtained) / parseFloat(total);
+                if(!isNaN(result)){
+                    document.getElementById('percentage2').value = result*100;
+                }
+            }   
+            function findPercentage3(){
+                var obtained = document.getElementById('inputObtained3').value;
+                var total = document.getElementById('inputTotal3').value;
+                var result = parseFloat(obtained) / parseFloat(total);
+                if(!isNaN(result)){
+                    document.getElementById('percentage3').value = result*100;
+                }
+            }   
+            function findPercentage4(){
+                var obtained = document.getElementById('inputObtained4').value;
+                var total = document.getElementById('inputTotal4').value;
+                var result = parseFloat(obtained) / parseFloat(total);
+                if(!isNaN(result)){
+                    document.getElementById('percentage4').value = result*100;
+                }
+            }    
+            function average(){
+                var p1 = parseFloat(document.getElementById("percentage1").value);
+                var p2 = parseFloat(document.getElementById("percentage2").value);
+                var p3 = parseFloat(document.getElementById("percentage3").value);
+                var p4 = parseFloat(document.getElementById("percentage4").value);
+                var result = ((p1+p2+p3+p4)/4);
+                if(!isNaN(result)){
+                    document.getElementById("result").value = result;
+                }
+            } 
+            function weightedAverage(){
+                var w1 = parseFloat(document.getElementById("inputWeight1").value);
+                var w2 = parseFloat(document.getElementById("inputWeight2").value);
+                var w3 = parseFloat(document.getElementById("inputWeight3").value);
+                var w4 = parseFloat(document.getElementById("inputWeight4").value);
+                var p1 = parseFloat(document.getElementById("percentage1").value);
+                var p2 = parseFloat(document.getElementById("percentage2").value);
+                var p3 = parseFloat(document.getElementById("percentage3").value);
+                var p4 = parseFloat(document.getElementById("percentage4").value);
+                var result = ((p1*w1+p2*w2+p3*w3+p4*w4)/(w1+w2+w3+w4));
+                if(!isNaN(result)){
+                    document.getElementById("result").value = result;
+                }
+            }
+
+            function langToggle(){
+                if(document.body.getAttribute('lang') == "en"){
+                    document.body.setAttribute('lang',"fr");
+                }
+                else{
+                    document.body.setAttribute('lang',"en");
+                }
+            }
+
+            //WIP
+            function addRow(){
+                var table = document.getElementById("table");
+                var row = table.insertRow(table.rows.length);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = "a";
+                cell2.innerHTML = table.rows.length;
+            }
+        </script>
+
+        <div class="back">
+            <div class="box">
+                <div class="top_rect">
+
+                </div>
+
+                <br></br>
+
+                <h1 lang="en">
+                    Grade Calculator
+                </h1>
+                <h1 lang="fr">
+                    Calculateur de Notes
+                </h1>
+
+                <button lang="en" type="button" class="lang_button" onclick="langToggle()">
+                    Français?
+                </button>
+                <button lang="fr" type="button" class="lang_button" onclick="langToggle()">
+                    English?
+                </button>
+
+                <div class="inner_box">
+                    
+                    <h2 lang="en">
+                        Activities
+                    </h2>
+                    <h2 lang="fr">
+                        Activités
+                    </h2>
+
+                    <p lang="en" class="grades_p">
+                        Give grades to the numeric activities:
+                    </p>
+
+                    <p lang="fr" class="grades_p">
+                        Donner des notes aux activités numériques:
+                    </p>
+
+                    <table class="grade_table" id="table">
+                        <tr>
+                            <th lang="en">Name</th>
+                            <th lang="fr">Nom</th>
+
+                            <th lang="en">Short Name</th>
+                            <th lang="fr">Nom court</th>
+
+                            <th lang="en">Weight</th>
+                            <th lang="fr">Poids</th>
+
+                            <th lang="en">Grade</th>
+                            <th lang="fr">Notes</th>
+
+                            <th lang="en">Percent</th>
+                            <th lang="fr">Pour cent</th>
+                        </tr>
+                        <tr>
+                            <td lang="en">Activity 1</td>
+                            <td lang="fr">Activité 1</td>
+                            <td>A1</td>
+                            <td><input type="number" id="inputWeight1" class=input_box></td>
+                            <td><input type="number" id="inputObtained1" class=input_box onkeyup="findPercentage1();"> 
+                            / <br></br> 
+                            <input type="number" id="inputTotal1" class=input_box onkeyup="findPercentage1();"></td>
+                            <td> <input type="number" id="percentage1" class=input_box> </td>
+                        </tr>
+                        <tr>
+                            <td lang="en">Activity 2</td>
+                            <td lang="fr">Activité 2</td>
+                            <td>A2</td>
+                            <td><input type="number" id="inputWeight2" class=input_box></td>
+                            <td><input type="number" id="inputObtained2" class=input_box onkeyup="findPercentage2();"> 
+                            / <br></br> 
+                            <input type="number" id="inputTotal2" class=input_box onkeyup="findPercentage2();"></td>
+                            <td> <input type="number" id="percentage2" class=input_box> </td>
+                        </tr>
+                        <tr>
+                            <td lang="en">Activity 3</td>
+                            <td lang="fr">Activité 3</td>
+                            <td>A3</td>
+                            <td><input type="number" id="inputWeight3" class=input_box></td>
+                            <td><input type="number" id="inputObtained3" class=input_box onkeyup="findPercentage3();"> 
+                            / <br></br> 
+                            <input type="number" id="inputTotal3" class=input_box onkeyup="findPercentage3();"></td>
+                            <td> <input type="number" id="percentage3" class=input_box> </td>
+                        </tr>
+                        <tr>
+                            <td lang="en">Activity 4</td>
+                            <td lang="fr">Activité 4</td>
+                            <td>A4</td>
+                            <td><input type="number" id="inputWeight4" class=input_box></td>
+                            <td><input type="number" id="inputObtained4" class=input_box onkeyup="findPercentage4();"> 
+                            / <br></br> 
+                            <input type="number" id="inputTotal4" class=input_box onkeyup="findPercentage4();"></td>
+                            <td> <input type="number" id="percentage4" class=input_box> </td>
+                        </tr>
+                    </table>
+
+                    <p lang="en" class="result_p">
+                        Result
+                    </p>
+                    <p lang="fr" class="result_p">
+                        Résultat
+                    </p>
+
+                    <input type="number" id="result" class=input_box style=margin-left:10px>
+
+                    <br></br>
+
+                    <button lang="en" type="button" class="weighted_button" onclick="weightedAverage()"> 
+                        WEIGHTED
+                    </button>
+                    <button lang="fr" type="button" class="weighted_button" onclick="weightedAverage()">
+                        PONDÉRÉÉ
+                    </button>
+
+                    <button lang="en" type="button" class="mean_button" onclick="average()">
+                        MEAN
+                    </button>
+                    <button lang="fr" type="button" class="mean_button" onclick="average()">
+                        MOYENNE
+                    </button>
+                </div>
+                <div class="bottom_rect">
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
