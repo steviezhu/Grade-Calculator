@@ -5,14 +5,16 @@
 
     <script>
     
-    document.getElementById("in").addEventListener('keypress',process_key);
-    
-    function process_key(ev){
-        console.log(ev.keyCode);
-    }
+    //var inter = setInterval(function(){console.log("hello");},3000);
+
+    var userObject = {name:"Bobby", age: 25};
+
+    var userString = JSON.stringify(userObject);
+
+    var serverObject = JSON.parse(userString);
 
     </script>
-        <input id="in">
+        
     <body>
 
     </body>

@@ -3,100 +3,16 @@
 
     <head>
         <link href="stylesheets/a1style.css" rel="stylesheet" type="text/css"></link>
+        <script type="text/javascript" src="a1javascript.js"></script>
     </head>
-
-    <style>
-
-        
-        
-
-    </style>
 
     <title> Coursys - Formula Tester </title>
 
     <body lang="en">
-        <script type="text/javascript">
-            function findPercentage1(){
-                var obtained = document.getElementById('inputObtained1').value;
-                var total = document.getElementById('inputTotal1').value;
-                var result = parseFloat(obtained) / parseFloat(total);
-                if(!isNaN(result)){
-                    document.getElementById('percentage1').value = result*100;
-                }
-            } 
-            function findPercentage2(){
-                var obtained = document.getElementById('inputObtained2').value;
-                var total = document.getElementById('inputTotal2').value;
-                var result = parseFloat(obtained) / parseFloat(total);
-                if(!isNaN(result)){
-                    document.getElementById('percentage2').value = result*100;
-                }
-            }   
-            function findPercentage3(){
-                var obtained = document.getElementById('inputObtained3').value;
-                var total = document.getElementById('inputTotal3').value;
-                var result = parseFloat(obtained) / parseFloat(total);
-                if(!isNaN(result)){
-                    document.getElementById('percentage3').value = result*100;
-                }
-            }   
-            function findPercentage4(){
-                var obtained = document.getElementById('inputObtained4').value;
-                var total = document.getElementById('inputTotal4').value;
-                var result = parseFloat(obtained) / parseFloat(total);
-                if(!isNaN(result)){
-                    document.getElementById('percentage4').value = result*100;
-                }
-            }    
-            function average(){
-                var p1 = parseFloat(document.getElementById("percentage1").value);
-                var p2 = parseFloat(document.getElementById("percentage2").value);
-                var p3 = parseFloat(document.getElementById("percentage3").value);
-                var p4 = parseFloat(document.getElementById("percentage4").value);
-                var result = ((p1+p2+p3+p4)/4);
-                if(!isNaN(result)){
-                    document.getElementById("result").value = result;
-                }
-            } 
-            function weightedAverage(){
-                var w1 = parseFloat(document.getElementById("inputWeight1").value);
-                var w2 = parseFloat(document.getElementById("inputWeight2").value);
-                var w3 = parseFloat(document.getElementById("inputWeight3").value);
-                var w4 = parseFloat(document.getElementById("inputWeight4").value);
-                var p1 = parseFloat(document.getElementById("percentage1").value);
-                var p2 = parseFloat(document.getElementById("percentage2").value);
-                var p3 = parseFloat(document.getElementById("percentage3").value);
-                var p4 = parseFloat(document.getElementById("percentage4").value);
-                var result = ((p1*w1+p2*w2+p3*w3+p4*w4)/(w1+w2+w3+w4));
-                if(!isNaN(result)){
-                    document.getElementById("result").value = result;
-                }
-            }
-
-            function langToggle(){
-                if(document.body.getAttribute('lang') == "en"){
-                    document.body.setAttribute('lang',"fr");
-                }
-                else{
-                    document.body.setAttribute('lang',"en");
-                }
-            }
-
-            //WIP
-            function addRow(){
-                var table = document.getElementById("table");
-                var row = table.insertRow(table.rows.length);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                cell1.innerHTML = "a";
-                cell2.innerHTML = table.rows.length;
-            }
-        </script>
 
         <div class="back">
             <div class="box">
                 <div class="top_rect">
-
                 </div>
 
                 <br></br>
@@ -127,7 +43,6 @@
                     <p lang="en" class="grades_p">
                         Give grades to the numeric activities:
                     </p>
-
                     <p lang="fr" class="grades_p">
                         Donner des notes aux activités numériques:
                     </p>
@@ -202,6 +117,13 @@
 
                     <br></br>
 
+                    <button lang="en" type="button" class="clear_table_button" onclick="clearTable()">
+                        CLEAR TABLE
+                    </button>
+                    <button lang="fr" type="button" class="clear_table_button" onclick="clearTable()">
+                        DÉBARRASSE LA TABLE
+                    </button>
+
                     <button lang="en" type="button" class="weighted_button" onclick="weightedAverage()"> 
                         WEIGHTED
                     </button>
@@ -215,9 +137,10 @@
                     <button lang="fr" type="button" class="mean_button" onclick="average()">
                         MOYENNE
                     </button>
+                    
                 </div>
-                <div class="bottom_rect">
 
+                <div class="bottom_rect">
                 </div>
 
             </div>
