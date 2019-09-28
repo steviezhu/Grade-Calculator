@@ -3,7 +3,7 @@ function findPercentage1(){
     var total = document.getElementById('inputTotal1').value;
     var result = parseFloat(obtained) / parseFloat(total);
     if(!isNaN(result)){
-        document.getElementById('percentage1').value = result*100;
+        document.getElementById('percentage1').innerHTML = result*100;
     }
 } 
 function findPercentage2(){
@@ -11,7 +11,7 @@ function findPercentage2(){
     var total = document.getElementById('inputTotal2').value;
     var result = parseFloat(obtained) / parseFloat(total);
     if(!isNaN(result)){
-        document.getElementById('percentage2').value = result*100;
+        document.getElementById('percentage2').innerHTML = result*100;
     }
 }   
 function findPercentage3(){
@@ -19,7 +19,7 @@ function findPercentage3(){
     var total = document.getElementById('inputTotal3').value;
     var result = parseFloat(obtained) / parseFloat(total);
     if(!isNaN(result)){
-        document.getElementById('percentage3').value = result*100;
+        document.getElementById('percentage3').innerHTML = result*100;
     }
 }   
 function findPercentage4(){
@@ -27,14 +27,14 @@ function findPercentage4(){
     var total = document.getElementById('inputTotal4').value;
     var result = parseFloat(obtained) / parseFloat(total);
     if(!isNaN(result)){
-        document.getElementById('percentage4').value = result*100;
+        document.getElementById('percentage4').innerHTML = result*100;
     }
 }    
 function average(){
-    var p1 = parseFloat(document.getElementById("percentage1").value);
-    var p2 = parseFloat(document.getElementById("percentage2").value);
-    var p3 = parseFloat(document.getElementById("percentage3").value);
-    var p4 = parseFloat(document.getElementById("percentage4").value);
+    var p1 = parseFloat(document.getElementById("percentage1").innerHTML);
+    var p2 = parseFloat(document.getElementById("percentage2").innerHTML);
+    var p3 = parseFloat(document.getElementById("percentage3").innerHTML);
+    var p4 = parseFloat(document.getElementById("percentage4").innerHTML);
     var totalValue = 0;
     var totalWeight = 0;
     if(p1){
@@ -54,7 +54,7 @@ function average(){
         totalWeight++;
     }
     if(totalValue && totalWeight){
-        document.getElementById("result").value = (totalValue / totalWeight);
+        document.getElementById("result").innerHTML = (totalValue / totalWeight);
     }
 } 
 function weightedAverage(){
@@ -62,10 +62,10 @@ function weightedAverage(){
     var w2 = parseFloat(document.getElementById("inputWeight2").value);
     var w3 = parseFloat(document.getElementById("inputWeight3").value);
     var w4 = parseFloat(document.getElementById("inputWeight4").value);
-    var p1 = parseFloat(document.getElementById("percentage1").value);
-    var p2 = parseFloat(document.getElementById("percentage2").value);
-    var p3 = parseFloat(document.getElementById("percentage3").value);
-    var p4 = parseFloat(document.getElementById("percentage4").value);
+    var p1 = parseFloat(document.getElementById("percentage1").innerHTML);
+    var p2 = parseFloat(document.getElementById("percentage2").innerHTML);
+    var p3 = parseFloat(document.getElementById("percentage3").innerHTML);
+    var p4 = parseFloat(document.getElementById("percentage4").innerHTML);
     var totalValue = 0;
     var totalWeight = 0;
     if(w1 && p1){
@@ -85,7 +85,7 @@ function weightedAverage(){
         totalWeight = totalWeight + w4;
     }
     if(totalValue && totalWeight){
-        document.getElementById("result").value = (totalValue / totalWeight);
+        document.getElementById("result").innerHTML = (totalValue / totalWeight);
     }
 }
 
@@ -100,9 +100,15 @@ function langToggle(){
 
 function clearTable(){
     var inputs = document.getElementsByTagName("input");
+    var innerhtml = document.getElementsByName("innerhtml");
     for(var i = 0; i<inputs.length; i++){
         if(inputs[i].type == "number"){
             inputs[i].value = "";
+        }
+    }
+    for(var j = 0; j<innerhtml.length; j++){
+        if(innerhtml[j].innerHTML != ""){
+            innerhtml[j].innerHTML = "";
         }
     }
 }
